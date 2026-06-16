@@ -1,0 +1,39 @@
+import os
+
+PROJECT_DIR = "Project"
+SRC_DIR = os.path.join(PROJECT_DIR, "src")
+
+TEST_FILES = [f"test{i}.py" for i in range(2, 511)]
+
+TEST_TEMPLATE = '''def test():
+    print("Running {}")
+
+if __name__ == "__main__":
+    test()
+'''
+
+MAIN_CONTENT = '''def main():
+    print("Hello from main!")
+
+if __name__ == "__main__":
+    main()
+'''
+
+def create_project():
+    os.makedirs(SRC_DIR, exist_ok=True)
+
+    main_path = os.path.join(SRC_DIR, "main.py")
+    with open(main_path, "w", encoding="utf-8") as f:
+        f.write(MAIN_CONTENT)
+    print(f"Создан {main_path}")
+
+    for filename in TEST_FILES:
+        file_path = os.path.join(SRC_DIR, filename)
+        content = TEST_TEMPLATE.format(filename)
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.write(content)
+       
+    print(f"Все {len(TEST_FILES)} тестовых файлов созданы в {SRC_DIR}")
+
+if __name__ == "__main__":
+    create_project()
