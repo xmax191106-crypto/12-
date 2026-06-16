@@ -1,0 +1,11 @@
+ip_string = input("Bebute IP-adpec:")
+ip_parts = ip_string.split('.')
+is_correct = True
+if len(ip_parts) == 4:
+    for segment in ip_parts:
+    if not (0 <= int(segment) <= 255):
+    is_correct = False
+    break
+else:
+    is_correct = False
+print("DA" if is_correct else "HET")
