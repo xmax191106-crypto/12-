@@ -1,0 +1,9 @@
+place_bull = 10
+place_calf = 5
+
+for num_bull in range(0, 13): 
+    for num_calf in range(0, 21):  
+        total_cows = num_bull + num_calf
+        if total_cows >= 20 and total_cows <= 30:
+            total_cost = (num_bull * place_bull) + (num_calf * place_calf)
+            print("Бычков: {}, Телят: {}, Стоимость: {}".format(num_bull, num_calf, total_cost))
