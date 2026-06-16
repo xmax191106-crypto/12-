@@ -1,0 +1,13 @@
+first_num = input("Введите первое число: ")
+while True:
+  second_num = input("Введите второе число: ")
+  if int(second_num) <= int(first_num):
+    print("Ашипка. Второе число должно быть > первого")
+    continue
+  break
+while True:
+  third_num = input("Введите третье число: ")
+  if int(third_num) <= int(second_num):
+    print("Ашипка. Третье число должно быть > второго")
+    continue
+  break
