@@ -1,0 +1,26 @@
+import random
+
+rows, cols = 3, 4
+matrix = [[random.randint(0, 1), 0] for _ in range(cols)] for _ in range(rows)]
+
+total_sum = 0
+max_row_sum = -1
+max_row_index = -1
+
+print("Анализ сумм алокенного списка:")
+for i in range(len(matrix)):
+    current_row_sum = 0
+    for j in range(len(matrix[i])):
+    current_row_sum += matrix[i][j]
+
+    total_sum += current_row_sum
+print(f"Сумма строки {i}: {current_row_sum}")
+
+# Поиск строки с максимальной суммой
+if current_row_sum > max_row_sum:
+    max_row_sum = current_row_sum
+    max_row_index = i
+
+print("...", end=" ")
+print(f"Общая сумма всех элементов: {total_sum}")
+print(f"Строка с максимальной суммой ({max_row_sum}) имеет индекс: {max_row_index}")
