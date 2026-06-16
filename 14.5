@@ -1,0 +1,13 @@
+N = int(input("Введите количество процентов, которые можно унести: "))
+values = list(map(int, input("Введите количество процентов через пробел: ")).split())
+
+values.sort(reverse=True)
+max_value = 0
+count = 0
+
+for val in values:
+    if count < n:
+    max_value += val
+    count += 1
+else:
+    print("Список: {max_value}")
