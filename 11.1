@@ -1,0 +1,8 @@
+print("Все тройки:")
+for n in range(0, 13): 
+    for k in range(0, 13 - n): 
+        total_days = (28 * n) + (30 * k) + m  
+        if total_days >= 0 and total_days <= 31:
+            m = total_days / 31
+            if m >= 0:
+                print("n = {}, k = {}, m = {:.2f}".format(n, k, m))
