@@ -1,0 +1,17 @@
+numbers = [10, 5, 17, 3, 8]
+
+numbers_1 = [2, 6, 3, 14, 10, 4, 11, 16, 12, 5, 4, 8]
+
+numbers.extend(numbers_1)
+
+print(f"Длина списка: {len(numbers)}")
+print(f"Последний элемент: {numbers[-1]}")
+
+reversed_numbers = numbers.copy()
+reversed_numbers.reverse()
+print(f"Обратный порядок: {reversed_numbers}")
+
+if numbers.count(5) > 0 and numbers.count(17) > 0:
+    print("Yes")
+else:
+    print("No")
