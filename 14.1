@@ -1,0 +1,24 @@
+import random
+
+rows = 4
+cols = 5
+matrix = [[random.randint(0, 1, 100) for _ in range(cols)] for _ in range(rows)]
+
+print("Исходная матрица:")
+for row in matrix:
+    print(row)
+
+max_val = matrix[0][0]
+max_row_idx = 0
+max_col_idx = 0
+
+for i in range(len(matrix)):
+    for j in range(len(matrix[i])):
+    if matrix[i][j] > max_val:
+    max_val = matrix[i][j]
+    max_row_idx = i
+    max_col_idx = j
+
+print("... x 30")
+print(f"Максимальный элемент: {max_val}")
+print(f"Позиция: строка {max_row_idx}, столбец {max_col_idx}")
